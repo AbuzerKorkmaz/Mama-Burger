@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Proje.DATA.Entities
+namespace MamaBurger.Classes.Entites
 {
     public class ExtraMalzemelerSiparisler
     {

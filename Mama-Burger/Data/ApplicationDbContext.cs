@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Proje.DATA.Entities;
+using MamaBurger.Classes.Entites;
 using System.Reflection;
 
-namespace Mama_Burger.Data
+namespace MamaBurger.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {

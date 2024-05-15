@@ -1,8 +1,8 @@
-using Mama_Burger.Models;
+using MamaBurger.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Mama_Burger.Controllers
+namespace MamaBurger.Controllers
 {
     public class HomeController : Controller
     {
