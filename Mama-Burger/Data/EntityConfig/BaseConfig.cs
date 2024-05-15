@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Proje.DATA.Entities;
+using MamaBurger.Classes.Entites;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Proje.DAL.EntityConfig
+namespace MamaBurger.DAL.EntityConfig
 {
     public class BaseConfig<T> : IEntityTypeConfiguration<T> where T : BaseClass
     {

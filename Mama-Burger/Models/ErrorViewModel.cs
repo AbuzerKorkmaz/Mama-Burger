@@ -1,4 +1,4 @@
-namespace Mama_Burger.Models
+namespace MamaBurger.Models
 {
     public class ErrorViewModel
     {
