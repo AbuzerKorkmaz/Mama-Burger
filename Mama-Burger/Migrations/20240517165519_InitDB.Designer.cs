@@ -4,6 +4,7 @@ using MamaBurger.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Mama_Burger.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240517165519_InitDB")]
+    partial class InitDB
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -113,9 +116,7 @@ namespace Mama_Burger.Migrations
                             AccessFailedCount = 0,
                             Ad = "Cevdet",
                             Cinsiyet = 0,
-
                             ConcurrencyStamp = "90cc6b66-3735-4550-8de9-e5b434dc15ef",
-
                             ConfirmCode = 0,
                             DogumTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "cevdet@deneme.com",
@@ -123,11 +124,9 @@ namespace Mama_Burger.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "CEVDET@DENEME.COM",
                             NormalizedUserName = "CEVDET@DENEME.COM",
-
                             PasswordHash = "AQAAAAIAAYagAAAAEJhI/ZCp2/xTvwaBNlCPzHgmOVRwOEU5qmK5j0AhKMqp4ASIkW5rRRwDJ+Ak7FeIVw==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "f7a5614b-ab78-4995-b125-93d53a162d39",
-
                             Soyad = "Heredot",
                             TwoFactorEnabled = false,
                             UserName = "cevdet@deneme.com"
@@ -177,9 +176,7 @@ namespace Mama_Burger.Migrations
                             AktifMi = true,
                             Cesit = 0,
                             Fiyat = 5m,
-
                             OlusturmaZamani = new DateTime(2024, 5, 17, 19, 55, 19, 90, DateTimeKind.Local).AddTicks(5657)
-
                         },
                         new
                         {
@@ -188,9 +185,7 @@ namespace Mama_Burger.Migrations
                             AktifMi = true,
                             Cesit = 0,
                             Fiyat = 5m,
-
                             OlusturmaZamani = new DateTime(2024, 5, 17, 19, 55, 19, 90, DateTimeKind.Local).AddTicks(5670)
-
                         },
                         new
                         {
@@ -199,9 +194,7 @@ namespace Mama_Burger.Migrations
                             AktifMi = true,
                             Cesit = 0,
                             Fiyat = 5m,
-
                             OlusturmaZamani = new DateTime(2024, 5, 17, 19, 55, 19, 90, DateTimeKind.Local).AddTicks(5672)
-
                         },
                         new
                         {
@@ -210,9 +203,7 @@ namespace Mama_Burger.Migrations
                             AktifMi = true,
                             Cesit = 0,
                             Fiyat = 5m,
-
                             OlusturmaZamani = new DateTime(2024, 5, 17, 19, 55, 19, 90, DateTimeKind.Local).AddTicks(5673)
-
                         },
                         new
                         {
@@ -221,9 +212,7 @@ namespace Mama_Burger.Migrations
                             AktifMi = true,
                             Cesit = 2,
                             Fiyat = 5m,
-
-                        OlusturmaZamani = new DateTime(2024, 5, 17, 19, 55, 19, 90, DateTimeKind.Local).AddTicks(5675)
-
+                            OlusturmaZamani = new DateTime(2024, 5, 17, 19, 55, 19, 90, DateTimeKind.Local).AddTicks(5675)
                         },
                         new
                         {
@@ -232,9 +221,7 @@ namespace Mama_Burger.Migrations
                             AktifMi = true,
                             Cesit = 1,
                             Fiyat = 45m,
-
                             OlusturmaZamani = new DateTime(2024, 5, 17, 19, 55, 19, 90, DateTimeKind.Local).AddTicks(5676)
-
                         },
                         new
                         {
@@ -243,9 +230,7 @@ namespace Mama_Burger.Migrations
                             AktifMi = true,
                             Cesit = 1,
                             Fiyat = 60m,
-
                             OlusturmaZamani = new DateTime(2024, 5, 17, 19, 55, 19, 90, DateTimeKind.Local).AddTicks(5677)
-
                         },
                         new
                         {
@@ -254,9 +239,7 @@ namespace Mama_Burger.Migrations
                             AktifMi = true,
                             Cesit = 1,
                             Fiyat = 70m,
-
                             OlusturmaZamani = new DateTime(2024, 5, 17, 19, 55, 19, 90, DateTimeKind.Local).AddTicks(5682)
-
                         },
                         new
                         {
@@ -265,9 +248,7 @@ namespace Mama_Burger.Migrations
                             AktifMi = true,
                             Cesit = 2,
                             Fiyat = 20m,
-
                             OlusturmaZamani = new DateTime(2024, 5, 17, 19, 55, 19, 90, DateTimeKind.Local).AddTicks(5683)
-
                         });
                 });
 
@@ -336,9 +317,7 @@ namespace Mama_Burger.Migrations
                             Adi = "Classic",
                             AktifMi = true,
                             Fiyat = 150m,
-
                             OlusturmaZamani = new DateTime(2024, 5, 17, 19, 55, 19, 90, DateTimeKind.Local).AddTicks(8118)
-
                         },
                         new
                         {
@@ -346,9 +325,7 @@ namespace Mama_Burger.Migrations
                             Adi = "CheeseBurger",
                             AktifMi = true,
                             Fiyat = 170m,
-
                             OlusturmaZamani = new DateTime(2024, 5, 17, 19, 55, 19, 90, DateTimeKind.Local).AddTicks(8122)
-
                         },
                         new
                         {
@@ -356,9 +333,7 @@ namespace Mama_Burger.Migrations
                             Adi = "Acılı Burger",
                             AktifMi = true,
                             Fiyat = 120m,
-
                             OlusturmaZamani = new DateTime(2024, 5, 17, 19, 55, 19, 90, DateTimeKind.Local).AddTicks(8123)
-
                         },
                         new
                         {
@@ -366,9 +341,7 @@ namespace Mama_Burger.Migrations
                             Adi = "DoubleBurger",
                             AktifMi = true,
                             Fiyat = 150m,
-
                             OlusturmaZamani = new DateTime(2024, 5, 17, 19, 55, 19, 90, DateTimeKind.Local).AddTicks(8125)
-
                         },
                         new
                         {
@@ -376,9 +349,7 @@ namespace Mama_Burger.Migrations
                             Adi = "Tavuk Burger",
                             AktifMi = true,
                             Fiyat = 100m,
-
                             OlusturmaZamani = new DateTime(2024, 5, 17, 19, 55, 19, 90, DateTimeKind.Local).AddTicks(8126)
-
                         });
                 });
 
@@ -526,18 +497,14 @@ namespace Mama_Burger.Migrations
                         new
                         {
                             Id = 1,
-
                             ConcurrencyStamp = "6d5c48dd-7aef-41df-b164-8d497a8163c5",
-
                             Name = "Musteri",
                             NormalizedName = "MUSTERI"
                         },
                         new
                         {
                             Id = 2,
-
                             ConcurrencyStamp = "2eb85492-47bc-4892-82d7-610c99e59bae",
-
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
