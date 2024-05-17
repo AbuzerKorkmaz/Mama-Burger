@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="11.9.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter" Version="8.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.4" />
@@ -26,10 +27,6 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\MenuResimleri\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="wwwroot\img\logo.png" />
   </ItemGroup>
 
 </Project>

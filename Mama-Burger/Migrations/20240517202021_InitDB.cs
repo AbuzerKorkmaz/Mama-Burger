@@ -84,6 +84,7 @@ namespace Mama_Burger.Migrations
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    MenuID = table.Column<int>(type: "int", nullable: false),
                     Adi = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     Fiyat = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Fotograf = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -232,6 +233,7 @@ namespace Mama_Burger.Migrations
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    UrunID = table.Column<int>(type: "int", nullable: false),
                     MenuID = table.Column<int>(type: "int", nullable: true),
                     ExtraMalzemeID = table.Column<int>(type: "int", nullable: true),
                     Adet = table.Column<int>(type: "int", nullable: false),
@@ -324,41 +326,44 @@ namespace Mama_Burger.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { 1, "98290741-28e5-40e5-ab47-37aeef9350ba", "Musteri", "MUSTERI" },
-                    { 2, "240ae079-b1ec-446c-abe9-b423b71bfad8", "Admin", "ADMIN" }
+                    { 1, "df9f4f27-0606-49cc-a7c7-a99eddd68c48", "Musteri", "MUSTERI" },
+                    { 2, "12546fe1-9cb8-40c1-81ab-c07187897378", "Admin", "ADMIN" }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "Ad", "Cinsiyet", "ConcurrencyStamp", "ConfirmCode", "DogumTarihi", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "Soyad", "TwoFactorEnabled", "UserName" },
-                values: new object[] { 1, 0, "Cevdet", 0, "66c653fb-e1ee-4727-8e39-8d5a23ad3ced", 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "cevdet@deneme.com", true, false, null, "CEVDET@DENEME.COM", "CEVDET@DENEME.COM", "AQAAAAIAAYagAAAAEJqGiFjqx0txht09RRw2puPwQBsNnMJN/JaTw9rTei4yqnzc5/C0OmpSgIh6mMl2lg==", null, false, "77a61323-017e-496d-8a5c-aea0d89f9b55", "Heredot", false, "cevdet@deneme.com" });
+                values: new object[] { 1, 0, "Cevdet", 0, "9cc38fc3-7c82-4bbd-ad3d-d5d6158ce566", 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "cevdet@deneme.com", true, false, null, "CEVDET@DENEME.COM", "CEVDET@DENEME.COM", "AQAAAAIAAYagAAAAEG50F4uKlKO++SI7CEvF9iW9qF35KjzBMHb86/nU8Q12FrxuUC41bXhfU9+IQbEvOw==", null, false, "01973844-4509-42e9-99b9-65ab9a212d32", "Heredot", false, "cevdet@deneme.com" });
 
             migrationBuilder.InsertData(
                 table: "ExtraMalzemeler",
                 columns: new[] { "ID", "Adi", "AktifMi", "Cesit", "Fiyat", "GuncellemeZamani", "OlusturmaZamani", "SilinmeZamani" },
                 values: new object[,]
                 {
-                    { 1, "Ketçap", true, 0, 5m, null, new DateTime(2024, 5, 17, 15, 39, 49, 497, DateTimeKind.Local).AddTicks(2938), null },
-                    { 2, "Mayonez", true, 0, 5m, null, new DateTime(2024, 5, 17, 15, 39, 49, 497, DateTimeKind.Local).AddTicks(2953), null },
-                    { 3, "Ranch Sos", true, 0, 5m, null, new DateTime(2024, 5, 17, 15, 39, 49, 497, DateTimeKind.Local).AddTicks(2955), null },
-                    { 4, "Barbekü Sos", true, 0, 5m, null, new DateTime(2024, 5, 17, 15, 39, 49, 497, DateTimeKind.Local).AddTicks(2956), null },
-                    { 6, "Sufle", true, 2, 5m, null, new DateTime(2024, 5, 17, 15, 39, 49, 497, DateTimeKind.Local).AddTicks(2957), null },
-                    { 7, "Patates Kızartması", true, 1, 45m, null, new DateTime(2024, 5, 17, 15, 39, 49, 497, DateTimeKind.Local).AddTicks(2958), null },
-                    { 8, "Mac&Cheese Balls", true, 1, 60m, null, new DateTime(2024, 5, 17, 15, 39, 49, 497, DateTimeKind.Local).AddTicks(2960), null },
-                    { 9, "Mozarella Sticks", true, 1, 70m, null, new DateTime(2024, 5, 17, 15, 39, 49, 497, DateTimeKind.Local).AddTicks(2961), null },
-                    { 10, "Dondurma", true, 2, 20m, null, new DateTime(2024, 5, 17, 15, 39, 49, 497, DateTimeKind.Local).AddTicks(2962), null }
+                    { 1, "Ketçap", true, 0, 5m, null, new DateTime(2024, 5, 17, 23, 20, 21, 130, DateTimeKind.Local).AddTicks(7898), null },
+                    { 2, "Mayonez", true, 0, 5m, null, new DateTime(2024, 5, 17, 23, 20, 21, 130, DateTimeKind.Local).AddTicks(7916), null },
+                    { 3, "Ranch Sos", true, 0, 5m, null, new DateTime(2024, 5, 17, 23, 20, 21, 130, DateTimeKind.Local).AddTicks(7919), null },
+                    { 4, "Barbekü Sos", true, 0, 5m, null, new DateTime(2024, 5, 17, 23, 20, 21, 130, DateTimeKind.Local).AddTicks(7920), null },
+                    { 6, "Sufle", true, 2, 5m, null, new DateTime(2024, 5, 17, 23, 20, 21, 130, DateTimeKind.Local).AddTicks(7922), null },
+                    { 7, "Patates Kızartması", true, 1, 45m, null, new DateTime(2024, 5, 17, 23, 20, 21, 130, DateTimeKind.Local).AddTicks(7924), null },
+                    { 8, "Mac&Cheese Balls", true, 1, 60m, null, new DateTime(2024, 5, 17, 23, 20, 21, 130, DateTimeKind.Local).AddTicks(7926), null },
+                    { 9, "Mozarella Sticks", true, 1, 70m, null, new DateTime(2024, 5, 17, 23, 20, 21, 130, DateTimeKind.Local).AddTicks(7927), null },
+                    { 10, "Dondurma", true, 2, 20m, null, new DateTime(2024, 5, 17, 23, 20, 21, 130, DateTimeKind.Local).AddTicks(7929), null }
                 });
 
             migrationBuilder.InsertData(
                 table: "Menuler",
-                columns: new[] { "ID", "Adi", "AktifMi", "Fiyat", "Fotograf", "GuncellemeZamani", "OlusturmaZamani", "SilinmeZamani" },
+                columns: new[] { "ID", "Adi", "AktifMi", "Fiyat", "Fotograf", "GuncellemeZamani", "MenuID", "OlusturmaZamani", "SilinmeZamani" },
                 values: new object[,]
                 {
-                    { 1, "Classic", true, 150m, null, null, new DateTime(2024, 5, 17, 15, 39, 49, 497, DateTimeKind.Local).AddTicks(5526), null },
-                    { 2, "CheeseBurger", true, 170m, null, null, new DateTime(2024, 5, 17, 15, 39, 49, 497, DateTimeKind.Local).AddTicks(5531), null },
-                    { 3, "Acılı Burger", true, 120m, null, null, new DateTime(2024, 5, 17, 15, 39, 49, 497, DateTimeKind.Local).AddTicks(5532), null },
-                    { 4, "DoubleBurger", true, 150m, null, null, new DateTime(2024, 5, 17, 15, 39, 49, 497, DateTimeKind.Local).AddTicks(5533), null },
-                    { 5, "Tavuk Burger", true, 100m, null, null, new DateTime(2024, 5, 17, 15, 39, 49, 497, DateTimeKind.Local).AddTicks(5534), null }
+                    { 1, "Beefy Burgers", true, 150m, null, null, 0, new DateTime(2024, 5, 17, 23, 20, 21, 131, DateTimeKind.Local).AddTicks(778), null },
+                    { 2, "Burger Bizz", true, 270m, null, null, 0, new DateTime(2024, 5, 17, 23, 20, 21, 131, DateTimeKind.Local).AddTicks(784), null },
+                    { 3, "Burger Boys", true, 120m, null, null, 0, new DateTime(2024, 5, 17, 23, 20, 21, 131, DateTimeKind.Local).AddTicks(786), null },
+                    { 4, "Crackles Burger", true, 150m, null, null, 0, new DateTime(2024, 5, 17, 23, 20, 21, 131, DateTimeKind.Local).AddTicks(787), null },
+                    { 5, "Bull Burgers", true, 200m, null, null, 0, new DateTime(2024, 5, 17, 23, 20, 21, 131, DateTimeKind.Local).AddTicks(788), null },
+                    { 6, "Rocket Burgers", true, 200m, null, null, 0, new DateTime(2024, 5, 17, 23, 20, 21, 131, DateTimeKind.Local).AddTicks(789), null },
+                    { 7, "Smokin Burger", true, 300m, null, null, 0, new DateTime(2024, 5, 17, 23, 20, 21, 131, DateTimeKind.Local).AddTicks(820), null },
+                    { 8, "Delish Burger", true, 150m, null, null, 0, new DateTime(2024, 5, 17, 23, 20, 21, 131, DateTimeKind.Local).AddTicks(821), null }
                 });
 
             migrationBuilder.InsertData(

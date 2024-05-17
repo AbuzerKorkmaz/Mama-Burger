@@ -9,11 +9,7 @@ namespace MamaBurger.DTOsVMs.DTOs
 {
 	public class SepetiOnaylaDTO
 	{
-        public SepetiOnaylaDTO()
-        {
-            Sepettekiler = new();
-        }
-        public List<Sepet> Sepettekiler { get; set; }
-        public string userId { get; set; }
+        public ICollection<Sepet> Sepettekiler { get; set; }
+        public int UserID { get; set; }
 	}
 }

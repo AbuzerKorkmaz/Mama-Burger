@@ -9,6 +9,7 @@ namespace MamaBurger.Classes.Entites
 {
 	public class Sepet : BaseClass
 	{
+        public int UrunID { get; set; }
         public int? MenuID { get; set; }
         public Menu? Menu { get; set; }
         public int? ExtraMalzemeID { get; set; }

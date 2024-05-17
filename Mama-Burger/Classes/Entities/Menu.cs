@@ -9,7 +9,7 @@ namespace MamaBurger.Classes.Entites
 {
     public class Menu : BaseClass
     {
- 
+        public int MenuID {  get; set; }
         public string Adi { get; set; }
         public decimal Fiyat { get; set; }
         public string? Fotograf { get; set; }

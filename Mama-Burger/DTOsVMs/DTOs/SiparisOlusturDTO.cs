@@ -11,13 +11,8 @@ namespace MamaBurger.DTOsVMs.DTOs
 {
     public class SiparisOlusturDTO
     {
-        public SiparisOlusturDTO()
-        {
-            Menuler = new();
-            ExtraMalzemeler = new();
-        }
-        public List<Menu> Menuler { get; set; }
+        public ICollection<Menu> Menuler { get; set; }
         public Boyut Boyut { get; set; }
-        public List<ExtraMalzeme> ExtraMalzemeler { get; set; } 
+        public ICollection<ExtraMalzeme> ExtraMalzemeler { get; set; } 
     }
 }

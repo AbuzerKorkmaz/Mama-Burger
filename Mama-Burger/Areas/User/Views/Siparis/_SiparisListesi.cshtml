@@ -1,4 +1,4 @@
-﻿@using Microsoft.AspNetCore.Identity;
+﻿@* @using Microsoft.AspNetCore.Identity;
 @using MamaBurger.DTOsVMs.DTOs;
 @using MamaBurger.Classes.Entites;
 @inject UserManager<AppUser> UserManager
@@ -21,7 +21,7 @@
 	{
 		totalFiyat += item.Fiyat;
 		<tr>
-			@* <td><img class="img-fluid" src="data:image/jpeg;base64,@Convert.ToBase64String(item.Menu.Fotograf)"></td> *@
+		
 			<td>@item.Menu.Adi @item.Boyut.ToString() x @item.Adet.ToString()</td>
 			<td><button type="button" class="btn btn-outline-danger" onclick="SepettenSil(@item.ID)">-</button></td>
 			<td>@item.Adet</td>
@@ -41,4 +41,81 @@
 <div>
 	<input type="hidden" value="@user.Id" id="userID" />
 </div>
-<a class="btn product-btn btn-secondary" asp-action="SepetiOnayla" asp-route-id="@user.Id">Siparişi Tamamla</a>
+<a class="btn product-btn btn-secondary" asp-action="SepetiOnayla" asp-route-id="@user.Id">Siparişi Tamamla</a> *@
+
+ @using Microsoft.AspNetCore.Identity;
+@using MamaBurger.DTOsVMs.DTOs;
+@using MamaBurger.Classes.Entites;
+@inject UserManager<AppUser> UserManager
+
+@model SiparisGonderDTO
+@{
+    decimal totalFiyat = 0;
+    AppUser user = await UserManager.GetUserAsync(User);
+}
+
+
+
+<div class="container">
+    <h2>Sipariş Listesi</h2>
+
+    @if (Model.Sepettekiler != null && Model.Sepettekiler.Any())
+    {
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Menu Adı</th>
+                    <th>Boyut</th>
+                    <th>Adet</th>
+                    <th>Fiyat</th>
+                    <th>İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Sepettekiler)
+                {
+                    <tr>
+                        <td>@item.Menu.Adi</td>
+                        <td>@item.Boyut</td>
+                        <td>@item.Adet</td>
+                        <td>@item.Fiyat.ToString("C")</td>
+                        <td>
+                            <form method="post" asp-controller="Siparis" asp-action="SepettenSil">
+                                <input type="hidden" name="sepetID" value="@item.ID" />
+                                <button type="submit" class="btn btn-danger btn-sm">Sil</button>
+                            </form>
+                            <form method="post" asp-controller="Siparis" asp-action="AdetArttır">
+                                <input type="hidden" name="sepetID" value="@item.ID" />
+                                <button type="submit" class="btn btn-primary btn-sm">Adet Arttır</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>Sepetinizde ürün bulunmamaktadır.</p>
+    }
+
+    <div class="mt-3">
+        <form method="post" asp-controller="Siparis" asp-action="SepetTemizle">
+            <input type="hidden" name="userId" value="@Model.UserID" />
+            <button type="submit" class="btn btn-warning">Sepeti Temizle</button>
+        </form>
+    </div>
+
+    <div class="mt-3">
+        <form method="post" asp-controller="Siparis" asp-action="SepetiOnayla">
+            <input type="hidden" name="userId" value="@Model.UserID" />
+            <button type="submit" class="btn btn-success">Sepeti Onayla</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Optional: Add any custom JavaScript/jQuery here if needed
+    </script>
+}
