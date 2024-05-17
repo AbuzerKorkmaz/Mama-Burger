@@ -20,7 +20,7 @@ namespace MamaBurger.DTOsVMs.DTOs
         public decimal Fiyat { get; set; }
         public int Adet { get; set; }
         public List<Sepet> Sepettekiler { get; set; }
-        public string UserID { get; set; }
+        public int UserID { get; set; }
         public int ekleme { get; set; }
         public int MalzemeID { get; set; }
         public int Sos1ID { get; set; }

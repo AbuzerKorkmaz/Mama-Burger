@@ -11,7 +11,7 @@ namespace MamaBurger.Classes.Entites
     public class Siparis : BaseClass
     {
 
-        public string UserID { get; set; }
+        public int UserID { get; set; }
         public ICollection<SiparislerMenuler> SiparislerMenuler { get; set; }
         public ICollection<ExtraMalzemelerSiparisler> ExtraMalzemelerSiparisler { get; set; }
         public AppUser AppUser { get; set; }

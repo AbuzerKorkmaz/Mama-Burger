@@ -21,7 +21,7 @@ namespace MamaBurger.Controllers
         [HttpGet]
         public IActionResult ForgetPassword()
         {
-            return View();
+            return View("ForgetPassword");
         }
 
         [HttpPost]

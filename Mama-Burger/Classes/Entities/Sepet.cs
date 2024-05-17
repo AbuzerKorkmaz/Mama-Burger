@@ -16,7 +16,7 @@ namespace MamaBurger.Classes.Entites
         public int Adet { get; set; }	
 		public Boyut Boyut { get; set; }
 		public decimal Fiyat { get; set; }
-        public string UserId { get; set; }
+        public int UserID { get; set; }
         public AppUser User { get; set; }
 
     }

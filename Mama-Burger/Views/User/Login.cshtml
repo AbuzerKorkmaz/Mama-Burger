@@ -1,4 +1,8 @@
-﻿@using MamaBurger.DTOsVMs.DTOs
+﻿@inject UserManager<AppUser> UserManager
+@inject SignInManager<AppUser> UserManager
+@using MamaBurger.Classes.Entites
+@using MamaBurger.DTOsVMs.DTOs
+@using Microsoft.AspNetCore.Identity
 @{
     ViewData["Title"] = "Login";
 }

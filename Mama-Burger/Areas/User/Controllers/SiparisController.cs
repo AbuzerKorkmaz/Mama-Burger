@@ -51,12 +51,12 @@ namespace MamaBurger.Areas.User.Controllers
                 Adet = siparisGonderDTO.Adet,
                 Boyut = siparisGonderDTO.Boyut,
                 Fiyat = siparisGonderDTO.Fiyat,
-                UserId=siparisGonderDTO.UserID,
+                UserID=siparisGonderDTO.UserID,
                 AktifMi = true
             };
             
             _service.Sepettekiler.Add(sepet);
-            siparisGonderDTO.Sepettekiler = _service.Sepettekiler.Where(x => x.UserId == siparisGonderDTO.UserID).Include(x => x.Menu).ToList();
+            siparisGonderDTO.Sepettekiler = _service.Sepettekiler.Where(x => x.UserID == siparisGonderDTO.UserID).Include(x => x.Menu).ToList();
 
             if(siparisGonderDTO.Sepettekiler.Count > 1 && siparisGonderDTO.ekleme==1)
             {
@@ -66,23 +66,23 @@ namespace MamaBurger.Areas.User.Controllers
             return PartialView("_SiparisListesi",siparisGonderDTO);
         }
 
-        public IActionResult SepetiOnayla(string id)
+        public IActionResult SepetiOnayla(int id)
         {
             SepetiOnaylaDTO sepetiOnaylaDTO = new()
             {
-                Sepettekiler = _service.Sepettekiler.Where(x => x.UserId == id).ToList()
+                Sepettekiler = _service.Sepettekiler.Where(x => x.UserID == id).ToList()
 			};
             return View(sepetiOnaylaDTO);
         }
         
-        public IActionResult SiparisOnayla(string id)
+        public IActionResult SiparisOnayla(int id)
         {
             Siparis siparis = new()
             {
                 UserID = id
 			};
             _service.Siparisler.Add(siparis);
-			List<Sepet> sepetIcerigi = _service.Sepettekiler.Where(x => x.UserId == id).ToList();
+			List<Sepet> sepetIcerigi = _service.Sepettekiler.Where(x => x.UserID == id).ToList();
             foreach(Sepet item in sepetIcerigi)
             {
                 if (item.MenuID != null)
@@ -137,7 +137,7 @@ namespace MamaBurger.Areas.User.Controllers
         {
             var userIDClaim = HttpContext.User.FindFirst(ClaimTypes.NameIdentifier);
 
-            string userID = userIDClaim.Value;
+            int userID = int.Parse(userIDClaim.Value);
 
             List<Siparis> siparis = _service.Siparisler.Where(x=>x.UserID==userID).Include(x => x.SiparislerMenuler).ToList();
 
@@ -148,13 +148,13 @@ namespace MamaBurger.Areas.User.Controllers
         public IActionResult SepetTemizle(SepetTemizleDTO sepetTemizleDTO)
         {
             int sonEklenenId = _service.Sepettekiler.Max(x => x.ID);
-            foreach(Sepet item in _service.Sepettekiler.Where(x=>x.UserId==sepetTemizleDTO.userId && x.ID!= sonEklenenId).ToList())
+            foreach(Sepet item in _service.Sepettekiler.Where(x=>x.UserID==sepetTemizleDTO.userId && x.ID!= sonEklenenId).ToList())
             {
                 _service.Sepettekiler.Remove(item);
             }
             SiparisGonderDTO siparisGonderDTO = new()
             {
-                Sepettekiler = _service.Sepettekiler.Where(x => x.UserId == sepetTemizleDTO.userId).Include(x => x.Menu).ToList()
+                Sepettekiler = _service.Sepettekiler.Where(x => x.UserID == sepetTemizleDTO.userId).Include(x => x.Menu).ToList()
             };
             return PartialView("_SiparisListesi", siparisGonderDTO);
         }
@@ -163,7 +163,7 @@ namespace MamaBurger.Areas.User.Controllers
         {
             SiparisGonderDTO siparisGonderDTO = new()
             {
-                Sepettekiler = _service.Sepettekiler.Where(x => x.UserId == sepetTemizleDTO.userId).ToList()
+                Sepettekiler = _service.Sepettekiler.Where(x => x.UserID == sepetTemizleDTO.userId).ToList()
             };
             return PartialView("_SiparisListesi", siparisGonderDTO);
         }
