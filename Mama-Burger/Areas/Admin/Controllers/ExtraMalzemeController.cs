@@ -24,7 +24,7 @@ namespace MamaBurger.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View(_service.ExtraMalzemeler.Select(x => x.AktifMi == true).ToList());
+            return View(_service.ExtraMalzemeler.ToList());
         }
         public IActionResult Create()
         {
@@ -46,7 +46,8 @@ namespace MamaBurger.Areas.Admin.Controllers
                 extraMalzeme.Cesit=createExtraMalzeme.Cesit;
 
                 _service.ExtraMalzemeler.Add(extraMalzeme);
-                return RedirectToAction("Index");
+                _service.SaveChanges();
+                return RedirectToAction("Index","ExtraMalzeme");
             }
             else
             {
@@ -82,6 +83,7 @@ namespace MamaBurger.Areas.Admin.Controllers
                 extraMalzeme.GuncellemeZamani=DateTime.Now;
 
                 _service.ExtraMalzemeler.Update(extraMalzeme);
+                _service.SaveChanges();
                 return RedirectToAction("Index");
             }
             else
@@ -101,7 +103,7 @@ namespace MamaBurger.Areas.Admin.Controllers
             deleteExtraMalzeme.AktifMi = false;
             deleteExtraMalzeme.SilinmeZamani = DateTime.Now;
             _service.ExtraMalzemeler.Update(deleteExtraMalzeme);
-
+            _service.SaveChanges();
             return RedirectToAction("Index");
         }
     }

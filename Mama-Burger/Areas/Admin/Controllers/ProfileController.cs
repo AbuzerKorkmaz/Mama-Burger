@@ -28,13 +28,13 @@ namespace MamaBurger.Areas.Admin.Controllers
 
         public async Task<IActionResult> Settings()
         {
-            var admin=_service.Users.Where(x=>x.UserName=="admin").FirstOrDefault();
+            var admin=_service.Users.Where(x=>x.UserName == "cevdet@deneme.com").FirstOrDefault();
 
             UpdateUserDTO updateUserDTO = new UpdateUserDTO()
             {
                 Ad=admin.UserName,
                 Email=admin.Email,
-                PhoneNumber=admin.PhoneNumber,             
+                PhoneNumber=admin.PhoneNumber           
             };
 
             return View(updateUserDTO);
@@ -47,7 +47,7 @@ namespace MamaBurger.Areas.Admin.Controllers
             var valid = validationRules.Validate(updateUserDTO);
             if (!valid.IsValid)
             {
-                var admin = _service.Users.Where(x => x.UserName == "admin").FirstOrDefault();
+                var admin = _service.Users.Where(x => x.UserName == "cevdet@deneme.com").FirstOrDefault();
 
                 admin.Email= updateUserDTO.Email;
                 admin.PhoneNumber= updateUserDTO.PhoneNumber;

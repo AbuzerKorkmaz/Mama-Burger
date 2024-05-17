@@ -22,7 +22,7 @@ namespace MamaBurger.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View(_service.Menuler.Where(x => x.AktifMi == true).ToList());
+            return View(_service.Menuler.ToList());
         }
 
         public IActionResult Create()
@@ -39,6 +39,7 @@ namespace MamaBurger.Areas.Admin.Controllers
                 Menu menu = new Menu();
                 menu.Adi = createMenu.Adi;
                 menu.Fiyat = createMenu.Fiyat;
+                menu.AktifMi = true;
                 menu.OlusturmaZamani = DateTime.Now;
 
                 if (createMenu.Image != null && IsImage(createMenu.Image.ContentType))
@@ -108,6 +109,7 @@ namespace MamaBurger.Areas.Admin.Controllers
                 }
 
                 _service.Menuler.Update(updateMenu);
+                _service.SaveChanges();
                 return RedirectToAction("Index");
             }
             else
@@ -132,6 +134,7 @@ namespace MamaBurger.Areas.Admin.Controllers
             Menu deleteMenu = _service.Menuler.Find(menu.ID);
             deleteMenu.AktifMi = false;
             _service.Menuler.Update(deleteMenu);
+            _service.SaveChanges();
             return RedirectToAction("Index");
         }
 

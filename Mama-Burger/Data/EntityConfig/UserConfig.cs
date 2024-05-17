@@ -18,7 +18,7 @@ namespace Mama_Burger.Data.EntityConfig
                 NormalizedEmail = "CEVDET@DENEME.COM",
                 UserName = "cevdet@deneme.com",
                 NormalizedUserName = "CEVDET@DENEME.COM",
-                EmailConfirmed = false,
+                EmailConfirmed = true,
                 ConcurrencyStamp = Guid.NewGuid().ToString(),
                 SecurityStamp = Guid.NewGuid().ToString()
 
