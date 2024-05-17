@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MamaBurger.Classes.Entites
 {
-    public class AppUser : IdentityUser
+    public class AppUser : IdentityUser<int>
     {
  
         public string Ad { get; set; }

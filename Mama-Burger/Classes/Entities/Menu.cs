@@ -12,7 +12,7 @@ namespace MamaBurger.Classes.Entites
  
         public string Adi { get; set; }
         public decimal Fiyat { get; set; }
-        public string Fotograf { get; set; }
+        public string? Fotograf { get; set; }
         public ICollection<SiparislerMenuler> SiparislerMenuler { get; set; }
         public ICollection<Sepet> SepettekiMenuler { get; set; }
     }

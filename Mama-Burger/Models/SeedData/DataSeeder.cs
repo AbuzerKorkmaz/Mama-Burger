@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using MamaBurger.Classes.Entites;
 using MamaBurger.Data;
+using Mama_Burger.Classes.Entities;
 
 namespace MamaBurger.Models.SeedData
 {
@@ -20,8 +21,8 @@ namespace MamaBurger.Models.SeedData
                 if (!context.Roles.Any())
                 {
                     await context.Roles.AddRangeAsync(
-                        new IdentityRole() { Name = "Musteri", NormalizedName = "MUSTERI" },
-                        new IdentityRole() { Name = "Admin", NormalizedName = "ADMIN" }
+                        new AppRole() { Name = "Musteri", NormalizedName = "MUSTERI" },
+                        new AppRole() { Name = "Admin", NormalizedName = "ADMIN" }
                         );
                 }
                 await context.SaveChangesAsync();
@@ -35,8 +36,8 @@ namespace MamaBurger.Models.SeedData
                     var hashed = password.HashPassword(appUser, "Admin12.");
                     appUser.PasswordHash = hashed;
 
-                    var userStore = new UserStore<AppUser>(context);
-                    await userStore.AddToRoleAsync(appUser, "ADMIN");
+                    //var userStore = new UserStore<AppUser,AppRole,ApplicationDbContext>(context);
+                    //await userStore.AddToRoleAsync(appUser, "ADMIN");
                 }
                 await context.SaveChangesAsync();
                 if (!context.Menuler.Any())
