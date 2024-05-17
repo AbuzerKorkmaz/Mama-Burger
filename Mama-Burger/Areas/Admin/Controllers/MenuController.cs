@@ -9,7 +9,7 @@ using MamaBurger.Data;
 namespace MamaBurger.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     public class MenuController : Controller
     {
         ApplicationDbContext _service;
@@ -22,7 +22,7 @@ namespace MamaBurger.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View(_service.Menuler.Select(x => x.AktifMi == true).ToList());
+            return View(_service.Menuler.Where(x => x.AktifMi == true).ToList());
         }
 
         public IActionResult Create()
@@ -39,6 +39,7 @@ namespace MamaBurger.Areas.Admin.Controllers
                 Menu menu = new Menu();
                 menu.Adi = createMenu.Adi;
                 menu.Fiyat = createMenu.Fiyat;
+                menu.OlusturmaZamani = DateTime.Now;
 
                 if (createMenu.Image != null && IsImage(createMenu.Image.ContentType))
                 {
@@ -54,6 +55,7 @@ namespace MamaBurger.Areas.Admin.Controllers
                 }
 
                 _service.Menuler.Add(menu);
+                _service.SaveChanges();
                 return RedirectToAction("Index");
             }
             else

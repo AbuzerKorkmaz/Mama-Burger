@@ -82,10 +82,14 @@ namespace MamaBurger.Controllers
                 int code = random.Next(100000, 1000000);
                 AppUser appUser = new AppUser()
                 {
+                    UserName=registerDTO.UserName,
                     Ad=registerDTO.Ad,
                     Soyad=registerDTO.Soyad,
                     Cinsiyet=registerDTO.Cinsiyet,
                     DogumTarihi=registerDTO.DogumTarihi,
+                    Email=registerDTO.Email,
+                    EmailConfirmed=true,
+                    
                 };
                 appUser.ConfirmCode = code;
 
@@ -95,7 +99,7 @@ namespace MamaBurger.Controllers
                     SendEmail(appUser.Email, code);
                     TempData["Mail"] = appUser.Email;
                     await userManager.AddToRoleAsync(appUser, "Musteri");
-                    return RedirectToAction("Index", "ConfirmMail");
+                    return RedirectToAction("Login", "User");
                 }
                 else
                 {

@@ -28,7 +28,7 @@
 
                                     <div class="form-outline">
                                         <label class="form-label" asp-for="UserName">Kullanıcı Adı</label>
-                                        <input type="text" asp-for="UserName" class="form-control form-control-lg" />
+                                        <input type="text" asp-for="UserName" name="UserName" class="form-control form-control-lg" />
                                         <span asp-validation-for="UserName" class="bg-danger text-white"></span>
                                     </div>
 
@@ -37,7 +37,7 @@
 
                                     <div class="form-outline">
                                         <label class="form-label" asp-for="Password">Şifre</label>
-                                        <input type="password" asp-for="Password" class="form-control form-control-lg" />
+                                        <input type="password" asp-for="Password" name="Password" class="form-control form-control-lg" />
                                         <span asp-validation-for="Password" class="bg-danger text-white"></span>
                                     </div>
 
@@ -48,7 +48,7 @@
 
                                     <div class="form-outline">
                                         <label class="form-label" asp-for="Ad">Ad</label>
-                                        <input type="text" asp-for="Ad" class="form-control form-control-lg" />
+                                        <input type="text" asp-for="Ad"  name ="Ad" class="form-control form-control-lg" />
                                         <span asp-validation-for="Ad" class="bg-danger text-white"></span>
                                     </div>
 
@@ -57,7 +57,7 @@
 
                                     <div class="form-outline">
                                         <label class="form-label" asp-for="Soyad">Soyad</label>
-                                        <input type="text" asp-for="Soyad" class="form-control form-control-lg" />
+                                        <input type="text" asp-for="Soyad" name="Soyad" class="form-control form-control-lg" />
                                         <span asp-validation-for="Soyad" class="bg-danger text-white"></span>
                                     </div>
 
@@ -69,7 +69,7 @@
 
                                     <div class="form-outline datepicker w-100">
                                         <label asp-for="DogumTarihi" class="form-label">Doğum Tarihi</label>
-                                        <input type="date" class="form-control form-control-lg" asp-for="DogumTarihi" />
+                                        <input type="date" class="form-control form-control-lg" name="DogumTarihi" asp-for="DogumTarihi" />
                                         <span asp-validation-for="DogumTarihi" class="bg-danger text-white"></span>
                                     </div>
 
@@ -98,7 +98,7 @@
 
                                     <div class="form-outline">
                                         <label class="form-label" asp-for="Email">Email</label>
-                                        <input type="email" asp-for="Email" class="form-control form-control-lg" />
+                                        <input type="email" asp-for="Email" name="Email" class="form-control form-control-lg" />
                                     </div>
 
                                 </div>
@@ -106,7 +106,7 @@
 
                                     <div class="form-outline">
                                         <label class="form-label" asp-for="PhoneNumber">Telefon Numarası</label>
-                                        <input type="tel" asp-for="PhoneNumber" class="form-control form-control-lg" />
+                                        <input type="tel" asp-for="PhoneNumber" name="PhoneNumber" class="form-control form-control-lg" />
                                     </div>
 
                                 </div>
