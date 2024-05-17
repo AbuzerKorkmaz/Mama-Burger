@@ -12,15 +12,15 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Mama_Burger.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240516212814_yenii")]
-    partial class yenii
+    [Migration("20240517123950_InitDB")]
+    partial class InitDB
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.0")
+                .HasAnnotation("ProductVersion", "8.0.4")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -108,6 +108,29 @@ namespace Mama_Burger.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AccessFailedCount = 0,
+                            Ad = "Cevdet",
+                            Cinsiyet = 0,
+                            ConcurrencyStamp = "66c653fb-e1ee-4727-8e39-8d5a23ad3ced",
+                            ConfirmCode = 0,
+                            DogumTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "cevdet@deneme.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "CEVDET@DENEME.COM",
+                            NormalizedUserName = "CEVDET@DENEME.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEJqGiFjqx0txht09RRw2puPwQBsNnMJN/JaTw9rTei4yqnzc5/C0OmpSgIh6mMl2lg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "77a61323-017e-496d-8a5c-aea0d89f9b55",
+                            Soyad = "Heredot",
+                            TwoFactorEnabled = false,
+                            UserName = "cevdet@deneme.com"
+                        });
                 });
 
             modelBuilder.Entity("MamaBurger.Classes.Entites.ExtraMalzeme", b =>
@@ -144,6 +167,89 @@ namespace Mama_Burger.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("ExtraMalzemeler");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            Adi = "Ketçap",
+                            AktifMi = true,
+                            Cesit = 0,
+                            Fiyat = 5m,
+                            OlusturmaZamani = new DateTime(2024, 5, 17, 15, 39, 49, 497, DateTimeKind.Local).AddTicks(2938)
+                        },
+                        new
+                        {
+                            ID = 2,
+                            Adi = "Mayonez",
+                            AktifMi = true,
+                            Cesit = 0,
+                            Fiyat = 5m,
+                            OlusturmaZamani = new DateTime(2024, 5, 17, 15, 39, 49, 497, DateTimeKind.Local).AddTicks(2953)
+                        },
+                        new
+                        {
+                            ID = 3,
+                            Adi = "Ranch Sos",
+                            AktifMi = true,
+                            Cesit = 0,
+                            Fiyat = 5m,
+                            OlusturmaZamani = new DateTime(2024, 5, 17, 15, 39, 49, 497, DateTimeKind.Local).AddTicks(2955)
+                        },
+                        new
+                        {
+                            ID = 4,
+                            Adi = "Barbekü Sos",
+                            AktifMi = true,
+                            Cesit = 0,
+                            Fiyat = 5m,
+                            OlusturmaZamani = new DateTime(2024, 5, 17, 15, 39, 49, 497, DateTimeKind.Local).AddTicks(2956)
+                        },
+                        new
+                        {
+                            ID = 6,
+                            Adi = "Sufle",
+                            AktifMi = true,
+                            Cesit = 2,
+                            Fiyat = 5m,
+                            OlusturmaZamani = new DateTime(2024, 5, 17, 15, 39, 49, 497, DateTimeKind.Local).AddTicks(2957)
+                        },
+                        new
+                        {
+                            ID = 7,
+                            Adi = "Patates Kızartması",
+                            AktifMi = true,
+                            Cesit = 1,
+                            Fiyat = 45m,
+                            OlusturmaZamani = new DateTime(2024, 5, 17, 15, 39, 49, 497, DateTimeKind.Local).AddTicks(2958)
+                        },
+                        new
+                        {
+                            ID = 8,
+                            Adi = "Mac&Cheese Balls",
+                            AktifMi = true,
+                            Cesit = 1,
+                            Fiyat = 60m,
+                            OlusturmaZamani = new DateTime(2024, 5, 17, 15, 39, 49, 497, DateTimeKind.Local).AddTicks(2960)
+                        },
+                        new
+                        {
+                            ID = 9,
+                            Adi = "Mozarella Sticks",
+                            AktifMi = true,
+                            Cesit = 1,
+                            Fiyat = 70m,
+                            OlusturmaZamani = new DateTime(2024, 5, 17, 15, 39, 49, 497, DateTimeKind.Local).AddTicks(2961)
+                        },
+                        new
+                        {
+                            ID = 10,
+                            Adi = "Dondurma",
+                            AktifMi = true,
+                            Cesit = 2,
+                            Fiyat = 20m,
+                            OlusturmaZamani = new DateTime(2024, 5, 17, 15, 39, 49, 497, DateTimeKind.Local).AddTicks(2962)
+                        });
                 });
 
             modelBuilder.Entity("MamaBurger.Classes.Entites.ExtraMalzemelerSiparisler", b =>
@@ -203,6 +309,48 @@ namespace Mama_Burger.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Menuler");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            Adi = "Classic",
+                            AktifMi = true,
+                            Fiyat = 150m,
+                            OlusturmaZamani = new DateTime(2024, 5, 17, 15, 39, 49, 497, DateTimeKind.Local).AddTicks(5526)
+                        },
+                        new
+                        {
+                            ID = 2,
+                            Adi = "CheeseBurger",
+                            AktifMi = true,
+                            Fiyat = 170m,
+                            OlusturmaZamani = new DateTime(2024, 5, 17, 15, 39, 49, 497, DateTimeKind.Local).AddTicks(5531)
+                        },
+                        new
+                        {
+                            ID = 3,
+                            Adi = "Acılı Burger",
+                            AktifMi = true,
+                            Fiyat = 120m,
+                            OlusturmaZamani = new DateTime(2024, 5, 17, 15, 39, 49, 497, DateTimeKind.Local).AddTicks(5532)
+                        },
+                        new
+                        {
+                            ID = 4,
+                            Adi = "DoubleBurger",
+                            AktifMi = true,
+                            Fiyat = 150m,
+                            OlusturmaZamani = new DateTime(2024, 5, 17, 15, 39, 49, 497, DateTimeKind.Local).AddTicks(5533)
+                        },
+                        new
+                        {
+                            ID = 5,
+                            Adi = "Tavuk Burger",
+                            AktifMi = true,
+                            Fiyat = 100m,
+                            OlusturmaZamani = new DateTime(2024, 5, 17, 15, 39, 49, 497, DateTimeKind.Local).AddTicks(5534)
+                        });
                 });
 
             modelBuilder.Entity("MamaBurger.Classes.Entites.Sepet", b =>
@@ -349,14 +497,14 @@ namespace Mama_Burger.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "d1e250df-816f-494f-b33c-ec078ade0724",
+                            ConcurrencyStamp = "98290741-28e5-40e5-ab47-37aeef9350ba",
                             Name = "Musteri",
                             NormalizedName = "MUSTERI"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "03da422d-4a69-44c6-89b4-6d2b92d2440f",
+                            ConcurrencyStamp = "240ae079-b1ec-446c-abe9-b423b71bfad8",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -444,6 +592,13 @@ namespace Mama_Burger.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = 1,
+                            RoleId = 2
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<int>", b =>
