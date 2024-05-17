@@ -42,7 +42,7 @@
         <div class="container-xxl position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
                 <a asp-area ="" asp-controller="Home" asp-action="Index" class="navbar-brand p-0">
-                    <h1 class="text-primary m-0"><i class="fa fa-hamburger me-3"></i>Maka Burger</h1>
+                    <h1 class="text-primary m-0"><i class="fa fa-hamburger me-3"></i>Mama Burger</h1>
                     <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -54,7 +54,7 @@
                         <a class="nav-item nav-link active" asp-area="" asp-controller="Home" asp-action="Index">Anasayfa</a>
                         @* <a class="nav-item nav-link" asp-controller="Home" asp-action="Privacy">Privacy</a> *@
                         <a asp-area="" asp-action="ContactUs" asp-controller="Home" class="nav-item nav-link">İletişim</a>
-                        <partial name="_LoginPartialView" />
+                        <partial name="_LoginPartial" />
                         @* <a href="service.html" class="nav-item nav-link">Service</a>
                         <a href="menu.html" class="nav-item nav-link">Menu</a> *@
                         @* <div class="nav-item dropdown">
@@ -89,30 +89,31 @@
         </main>
     </div>
     <!-- Footer Start -->
-    <footer>
+  @*   <footer> *@
+    @* <footer class="footer bg-footer-custom">
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Şirketimiz</h4>
                         <a class="btn btn-link" asp-controller="Home" asp-action="Index">Hakkımızda</a>
-                        <a class="btn btn-link" asp-action="ContactUs" asp-controller="Home">Bize Ulaşın</a>
+                        <a class="btn btn-link" asp-action="ContactUs" asp-controller="Home">Bize Ulaşın</a> *@
                     @* <a class="btn btn-link" href="">Reservation</a>
                     <a class="btn btn-link" href="">Privacy Policy</a>
                     <a class="btn btn-link" href="">Terms & Condition</a> *@
-                </div>
+                @* </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Bize Ulaşın</h4>
                         <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Rasimpaşa, 34716 Kadıköy/İstanbul</p>
                         <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>uuu1j33³ğ6akhı6000000ikimilyar</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>burgermaka4@gmail.com</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>burgermama@gmail.com</p> *@
                    @*  <div class="d-flex pt-2">
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
                     </div> *@
-                </div>
+               @*  </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Çalışma Saatleri</h4>
                     <h5 class="text-light fw-normal">Haftaiçi</h5>
@@ -138,7 +139,7 @@
             </div>
         </div>
     </div>
-    </footer>
+    </footer> *@
 
     <!-- Footer End -->
     <!-- Back to Top -->

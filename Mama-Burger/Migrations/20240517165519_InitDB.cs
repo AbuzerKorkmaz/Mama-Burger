@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Mama_Burger.Migrations
 {
     /// <inheritdoc />
-    public partial class yenii : Migration
+    public partial class InitDB : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -324,9 +324,47 @@ namespace Mama_Burger.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { 1, "d1e250df-816f-494f-b33c-ec078ade0724", "Musteri", "MUSTERI" },
-                    { 2, "03da422d-4a69-44c6-89b4-6d2b92d2440f", "Admin", "ADMIN" }
+                    { 1, "6d5c48dd-7aef-41df-b164-8d497a8163c5", "Musteri", "MUSTERI" },
+                    { 2, "2eb85492-47bc-4892-82d7-610c99e59bae", "Admin", "ADMIN" }
                 });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "Ad", "Cinsiyet", "ConcurrencyStamp", "ConfirmCode", "DogumTarihi", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "Soyad", "TwoFactorEnabled", "UserName" },
+                values: new object[] { 1, 0, "Cevdet", 0, "90cc6b66-3735-4550-8de9-e5b434dc15ef", 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "cevdet@deneme.com", true, false, null, "CEVDET@DENEME.COM", "CEVDET@DENEME.COM", "AQAAAAIAAYagAAAAEJhI/ZCp2/xTvwaBNlCPzHgmOVRwOEU5qmK5j0AhKMqp4ASIkW5rRRwDJ+Ak7FeIVw==", null, false, "f7a5614b-ab78-4995-b125-93d53a162d39", "Heredot", false, "cevdet@deneme.com" });
+
+            migrationBuilder.InsertData(
+                table: "ExtraMalzemeler",
+                columns: new[] { "ID", "Adi", "AktifMi", "Cesit", "Fiyat", "GuncellemeZamani", "OlusturmaZamani", "SilinmeZamani" },
+                values: new object[,]
+                {
+                    { 1, "Ketçap", true, 0, 5m, null, new DateTime(2024, 5, 17, 19, 55, 19, 90, DateTimeKind.Local).AddTicks(5657), null },
+                    { 2, "Mayonez", true, 0, 5m, null, new DateTime(2024, 5, 17, 19, 55, 19, 90, DateTimeKind.Local).AddTicks(5670), null },
+                    { 3, "Ranch Sos", true, 0, 5m, null, new DateTime(2024, 5, 17, 19, 55, 19, 90, DateTimeKind.Local).AddTicks(5672), null },
+                    { 4, "Barbekü Sos", true, 0, 5m, null, new DateTime(2024, 5, 17, 19, 55, 19, 90, DateTimeKind.Local).AddTicks(5673), null },
+                    { 6, "Sufle", true, 2, 5m, null, new DateTime(2024, 5, 17, 19, 55, 19, 90, DateTimeKind.Local).AddTicks(5675), null },
+                    { 7, "Patates Kızartması", true, 1, 45m, null, new DateTime(2024, 5, 17, 19, 55, 19, 90, DateTimeKind.Local).AddTicks(5676), null },
+                    { 8, "Mac&Cheese Balls", true, 1, 60m, null, new DateTime(2024, 5, 17, 19, 55, 19, 90, DateTimeKind.Local).AddTicks(5677), null },
+                    { 9, "Mozarella Sticks", true, 1, 70m, null, new DateTime(2024, 5, 17, 19, 55, 19, 90, DateTimeKind.Local).AddTicks(5682), null },
+                    { 10, "Dondurma", true, 2, 20m, null, new DateTime(2024, 5, 17, 19, 55, 19, 90, DateTimeKind.Local).AddTicks(5683), null }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Menuler",
+                columns: new[] { "ID", "Adi", "AktifMi", "Fiyat", "Fotograf", "GuncellemeZamani", "OlusturmaZamani", "SilinmeZamani" },
+                values: new object[,]
+                {
+                    { 1, "Classic", true, 150m, null, null, new DateTime(2024, 5, 17, 19, 55, 19, 90, DateTimeKind.Local).AddTicks(8118), null },
+                    { 2, "CheeseBurger", true, 170m, null, null, new DateTime(2024, 5, 17, 19, 55, 19, 90, DateTimeKind.Local).AddTicks(8122), null },
+                    { 3, "Acılı Burger", true, 120m, null, null, new DateTime(2024, 5, 17, 19, 55, 19, 90, DateTimeKind.Local).AddTicks(8123), null },
+                    { 4, "DoubleBurger", true, 150m, null, null, new DateTime(2024, 5, 17, 19, 55, 19, 90, DateTimeKind.Local).AddTicks(8125), null },
+                    { 5, "Tavuk Burger", true, 100m, null, null, new DateTime(2024, 5, 17, 19, 55, 19, 90, DateTimeKind.Local).AddTicks(8126), null }
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUserRoles",
+                columns: new[] { "RoleId", "UserId" },
+                values: new object[] { 2, 1 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

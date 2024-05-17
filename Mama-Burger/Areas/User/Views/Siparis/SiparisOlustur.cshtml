@@ -9,9 +9,9 @@
     AppUser user = await UserManager.GetUserAsync(User);
 }
 
-<div class="container-xxl py-5 bg-dark  mb-5">
+<div class="container-xxl py-5 bg-beige  mb-5">
     <div class="container text-center my-5 pt-5 pb-4">
-        <h1 class="display-3 text-white mb-3 animated slideInDown">MENÜLER</h1>
+        <h1 class="display-3 text-daark mb-3 animated slideInDown">MENÜLER</h1>
     </div>
 </div>
 <div class="container">
@@ -24,7 +24,7 @@
                     string modalAdihashtag = "#" + modalAdi;
                     <div class="all-products">
                         <div class="product">
-                            @* <img class="img-fluid" src="data:image/jpeg;base64,@Convert.ToBase64String(menu.Fotograf)"> *@
+                            <img class="img-fluid" src="data:image/jpeg;base64,(menu.Fotograf)">
                             <div class="product-info">
                                 <h4 class="product-title">
                                     @menu.Adi Menü
@@ -42,7 +42,7 @@
                                         <div class="modal-dialog modal-dialog-centered">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                   @*  <img class="img-fluid" src="data:image/jpeg;base64,@Convert.ToBase64String(menu.Fotograf)"> *@
+                                                    <img class="img-fluid" src="data:image/jpeg;base64,(menu.Fotograf)">
                                                 </div>
                                                 <div class="modal-body" >
                                                     <form id="modalform">

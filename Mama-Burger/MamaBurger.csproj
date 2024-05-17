@@ -28,4 +28,8 @@
     <Folder Include="wwwroot\MenuResimleri\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\img\logo.png" />
+  </ItemGroup>
+
 </Project>

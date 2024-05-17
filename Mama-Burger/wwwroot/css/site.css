@@ -20,3 +20,16 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.bg-beige {
+    background-color: #F2EFE5;
+}
+.bg-custom {
+    background-color: #E3E1D9;
+}
+.bg-footer-custom {
+    background-color: #F2EFE5;
+    padding: 5px; /* Ýsteðe baðlý olarak padding ekleyebilirsiniz */
+    text-align: center; /* Metni ortalayabilirsiniz */
+    color: black; /* Metin rengini ayarlayabilirsiniz */
+}

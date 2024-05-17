@@ -56,6 +56,7 @@ namespace MamaBurger.Areas.User.Controllers
             };
             
             _service.Sepettekiler.Add(sepet);
+            _service.SaveChanges();
             siparisGonderDTO.Sepettekiler = _service.Sepettekiler.Where(x => x.UserID == siparisGonderDTO.UserID).Include(x => x.Menu).ToList();
 
             if(siparisGonderDTO.Sepettekiler.Count > 1 && siparisGonderDTO.ekleme==1)
@@ -97,6 +98,7 @@ namespace MamaBurger.Areas.User.Controllers
                     };
                     _service.SiparislerMenuler.Add(siparislerMenu);
                     _service.Sepettekiler.Remove(item);
+                    _service.SaveChanges();
                 }
             }
 
